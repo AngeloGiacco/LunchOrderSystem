@@ -12,9 +12,9 @@
         $stmt.execute();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
         {
-          echo("<option>".$row["name"]."</option>");
-          if ($row["healthAdvice"] != "None") {
-            echo("<script>alert.(This has the following health advice:".$row["healthAdvice"]")");
+          echo("<option>".$row["NAME"]."</option>");
+          if ($row["Health Advice"] != "None") {
+            echo("<script>alert.(This has the following health advice:".$row["Health Advice"]")");
           }
         }
       ?>
@@ -26,9 +26,9 @@
         $stmt.execute();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
         {
-          echo("<option>".$row["name"]."</option>");
-          if ($row["healthAdvice"] != "None") {
-            echo("<script>alert.(This has the following health advice:".$row["healthAdvice"]")");
+          echo("<option>".$row["NAME"]."</option>");
+          if ($row["Health Advice"] != "None") {
+            echo("<script>alert.(This has the following health advice:".$row["Health Advice"]")");
           }
         }
       ?>
@@ -40,9 +40,9 @@
         $stmt.execute();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
         {
-          echo("<option>".$row["name"]."</option>");
-          if ($row["healthAdvice"] != "None") {
-            echo("<script>alert.(This has the following health advice:".$row["healthAdvice"]")");
+          echo("<option>".$row["NAME"]."</option>");
+          if ($row["Health Advice"] != "None") {
+            echo("<script>alert.(This has the following health advice:".$row["Health Advice"]")");
           }
         }
       ?>
@@ -54,9 +54,9 @@
         $stmt.execute();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
         {
-          echo("<option>".$row["name"]."</option>");
-          if ($row["healthAdvice"] != "None") {
-            echo("<script>alert.(This has the following health advice:".$row["healthAdvice"]")");
+          echo("<option>".$row["NAME"]."</option>");
+          if ($row["Health Advice"] != "None") {
+            echo("<script>alert.(This has the following health advice:".$row["Health Advice"]")");
           }
         }
       ?>
