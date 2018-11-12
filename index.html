@@ -60,8 +60,24 @@
         background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
         padding-top: 60px;
     }
+
     #id02 {
       display:None;
+    }
+
+    .close {
+      position: absolute;
+      right: 35px;
+      top: 15px;
+      font-size: 40px;
+      font-weight: bold;
+      color: #f1f1f1;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #053162;
+      cursor: pointer;
     }
 
     /* Modal Content/Box */
@@ -84,7 +100,7 @@
 <body>
   <div id="id01" class="modal">
 
-    <form class="modal-content" action="/action_page.php">
+    <form class="modal-content" action="authenticate.php">
 
       <div class="container">
         <label for="uname"><b>Username</b></label>
