@@ -9,7 +9,7 @@ try {
   $stmt.execute();
   if ($_POST["email"] = "admin " and $_POST["psw"] = "nimda") {// if user login information correct
     echo "successful admin login";
-    header("location: updateOrders.php");
+    header("location: updateOptions.php");
   } else {
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
     if ($row["password"] = $_POST["psw"]) {
