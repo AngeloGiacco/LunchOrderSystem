@@ -14,7 +14,7 @@
         {
           echo("<option>".$row["Name"]."</option>");
           if ($row["Health Advice"] != "None") {
-            echo("<script>alert.(This has the following health advice:".$row["Health Advice"]")</script>");
+            echo("<script>alert.('This has the following health advice:".$row["Health Advice"]."')</script>");
           }
         }
       ?>
@@ -28,7 +28,7 @@
         {
           echo("<option>".$row["Name"]."</option>");
           if ($row["Health Advice"] != "None") {
-            echo("<script>alert.(This has the following health advice:".$row["Health Advice"]")</script>");
+            echo("<script>alert.('This has the following health advice:".$row["Health Advice"]."')</script>");
           }
         }
       ?>
@@ -42,7 +42,7 @@
         {
           echo("<option>".$row["Name"]."</option>");
           if ($row["Health Advice"] != "None") {
-            echo("<script>alert.(This has the following health advice:".$row["Health Advice"]")</script>");
+            echo("<script>alert.('This has the following health advice:".$row["Health Advice"]."')</script>");
           }
         }
       ?>
@@ -56,7 +56,7 @@
         {
           echo("<option>".$row["Name"]."</option>");
           if ($row["Health Advice"] != "None") {
-            echo("<script>alert.(This has the following health advice:".$row["Health Advice"]")</script>");
+            echo("<script>alert.('This has the following health advice:".$row["Health Advice"]."')</script>");
           }
         }
       ?>
@@ -65,3 +65,4 @@
   </form>
 </body>
 </html>
+
