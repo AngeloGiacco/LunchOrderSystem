@@ -9,7 +9,7 @@
       <?php
         include_once("connection.php");
         $stmt = $conn->prepare("SELECT * FROM food WHERE FoodType = 0 and Stock > 0");
-        $stmt.execute();
+        $stmt->execute();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
         {
           echo("<option>".$row["Name"]."</option>");
@@ -23,7 +23,7 @@
       <?php
         include_once("connection.php");
         $stmt = $conn->prepare("SELECT * FROM food WHERE FoodType = 1 and Stock > 0");
-        $stmt.execute();
+        $stmt->execute();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
         {
           echo("<option>".$row["Name"]."</option>");
@@ -37,7 +37,7 @@
       <?php
         include_once("connection.php");
         $stmt = $conn->prepare("SELECT * FROM food WHERE FoodType = 2 and Stock > 0");
-        $stmt.execute();
+        $stmt->execute();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
         {
           echo("<option>".$row["Name"]."</option>");
@@ -51,7 +51,7 @@
       <?php
         include_once("connection.php");
         $stmt = $conn->prepare("SELECT * FROM food WHERE FoodType = 3 and Stock > 0");
-        $stmt.execute();
+        $stmt->execute();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
         {
           echo("<option>".$row["Name"]."</option>");
