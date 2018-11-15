@@ -2,9 +2,9 @@
 header('location: index.html');
 array_map("htmlspecialchars", $_POST);
 include_once("connection.php");
+print_r($_POST);
 try{
-	$stmt = $conn->prepare("INSERT INTO 'pupils' (StudentID,Surname,Forename,House,email,password)VALUES (null,:surname,:forename,:house,:email,:password)");
-	echo "<script>alert.(".$POST["forename"].")</script>";
+	$stmt = $conn->prepare("INSERT INTO pupils (StudentID,Surname,Forename,House,email,password)VALUES (null,:surname,:forename,:house,:email,:password)");
 	$stmt->bindParam(':forename', $_POST["forename"]);
 	$stmt->bindParam(':surname', $_POST["surname"]);
 	$stmt->bindParam(':house', $_POST["house"]);
