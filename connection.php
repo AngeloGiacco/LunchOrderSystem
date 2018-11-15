@@ -1,6 +1,6 @@
 <?php
-$servername = "http://fdb22.awardspace.net/";
-$username = "giacco.a@oundleschool.org.uk";
+$servername = "fdb22.awardspace.net"; //removed http://
+$username="2829205_pupils";
 $password = "7eDrHxZsZVSExFn";
 $dbname = "2829205_pupils";
 
