@@ -61,6 +61,27 @@
         }
       ?>
     </select>
+    <?php
+      echo "Date Required:<input type='date' min='".date("Y-m-d",strtotime("tomorrow"))."' required></input>";
+    ?>
+    Location: <select name = "location">
+        <option>Sports Hall</option>
+        <option>Two Acre</option>
+        <option>Laxton</option>
+        <option>Fisher</option>
+        <option>Crosby</option>
+        <option>Sidney</option>
+        <option>Grafton</option>
+        <option>St. A</option>
+        <option>School House</option>
+        <option>Bramston</option>
+        <option>Laundimer</option>
+        <option>Kirkeby<option>
+        <option>Wyatt</option>
+        <option>Dryden</option>
+        <option>Sanderson</option>
+        <option>New House</option>
+    </select>
     <input type="submit" value="New Order">
   </form>
 </body>
