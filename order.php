@@ -76,7 +76,7 @@
         <option>School House</option>
         <option>Bramston</option>
         <option>Laundimer</option>
-        <option>Kirkeby<option>
+        <option>Kirkeby</option>
         <option>Wyatt</option>
         <option>Dryden</option>
         <option>Sanderson</option>
