@@ -4,7 +4,8 @@
 //  echo date('Y-m-d');
   array_map("htmlspecialchars", $_POST);
   include_once("connection.php");
-  header("location: order.php");
+  //header("location: order.php");
+  print_r($_SESSION);
   //we have the food names, now we need to find the associated ID
   //studentID can be found from email
   //date ordered is today
@@ -24,13 +25,30 @@
       $fruitID = $row["FoodID"];
     }
   }
-  $stmt = $conn->prepare("INSERT INTO Orders (StudentID, ChoiceSandwich, ChoiceDrink, ChoiceSnack,ChoiceFruit,DateOrdered,DateRequired,Location) Values (2,:choicesa,:choiced, :choicesn, :choicef,:dateo, :dated, :location)");
+  $stmt = $conn->prepare("SELECT * FROM pupils");
+  $stmt->execute();
+  while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
+  {
+    if ($row["email"] == $_SESSION["email"]) {
+      $stmt2 = $conn->prepare("SELECT StudentID FROM pupils WHERE email = :email");
+      $stmt2->bindParam(':email', $_POST["email"]);
+      $stmt2->execute();
+      while ($row2 = $stmt2->fetch(PDO::FETCH_ASSOC)) {
+        $studentID = $row2;
+        break 2;
+      }
+    }
+  }
+  echo $studentID;
+  $stmt = $conn->prepare("INSERT INTO Orders (StudentID, ChoiceSandwich, ChoiceDrink, ChoiceSnack,ChoiceFruit,DateOrdered,DateRequired,Location) Values (:studentID,:choicesa,:choiced, :choicesn, :choicef,:dateo, :dated, :location)");
+  $stmt->bindParam(':studentID', $studentID);
   $stmt->bindParam(':choicesa', $sandwichID);
   $stmt->bindParam(':choiced', $drinkID);
   $stmt->bindParam(':choicef', $fruitID);
   $stmt->bindParam(':choicesn', $snackID);
   $stmt->bindParam(':dateo', date('Y-m-d'));
-  $stmt->bindParam(':dated', date("Y-m-d",strtotime("tomorrow")));
+  $stmt->bindParam(':dated', $_POST["required"]);
   $stmt->bindParam(':location', $_POST["location"]);
   $stmt->execute();
 ?>
+
