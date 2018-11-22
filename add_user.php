@@ -1,5 +1,5 @@
 <?php
-header('location: index.html');
+header('location: index.php');
 array_map("htmlspecialchars", $_POST);
 include_once("connection.php");
 print_r($_POST);
