@@ -12,11 +12,10 @@
   	$stmt->execute();
   	while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) //print all the options
   		{
-  			echo($row["Name"].'costs'.$row["Price"].". There are still".$row["Stock"]."in stock and the health advice is ".$row["Health Advice"]."<br>");
+  			echo($row["Name"].' costs '.$row["Price"].". There are still ".$row["Stock"]." in stock and the health advice is ".$row["Health Advice"]."<br>");
   		}
+    $conn=null;
   ?>
   <h1>Update options</h1>
-
-
 </body>
 </html>
