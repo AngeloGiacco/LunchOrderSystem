@@ -59,10 +59,11 @@
             echo("<script>alert.('This has the following health advice:".$row["Health Advice"]."')</script>");
           }
         }
+        $conn=null;
       ?>
     </select>
     <?php
-      echo "Date Required:<input type='date' min='".date("Y-m-d",strtotime("tomorrow"))."' required></input>";
+      echo "Date Required:<input type='date' name = 'required' min='".date("Y-m-d",strtotime("tomorrow"))."' required></input>";
     ?>
     Location: <select name = "location">
         <option>Sports Hall</option>
