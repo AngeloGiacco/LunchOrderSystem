@@ -2,7 +2,14 @@
 <html>
 <head>
 <title>Subjects</title>
-
+<style>
+  body {
+    font-family: Lato, Helvetica, sans-serif;
+    background: url(oundle.jpg) no-repeat center center fixed;
+    background-repeat: no-repeat;
+    background-size: 800px 800px;
+  }
+</style>
 </head>
 <body>
   <h1>Current options</h1>
