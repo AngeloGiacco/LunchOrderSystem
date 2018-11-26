@@ -23,13 +23,17 @@
   }
 
   #logout {
+    position: absolute;
     background: #b61111;
     padding: 15px;
     color: #fff;
     font-size: 20px;
     border: 0;
     border-radius: 4px;
-    box-shadow: 1px 3px 5px rgba(0,0,0,0.5)
+    box-shadow: 1px 3px 5px rgba(0,0,0,0.5);
+  }
+  select {
+    position: relative;
   }
   </style>
 <head>

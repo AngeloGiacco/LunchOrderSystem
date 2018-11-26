@@ -4,6 +4,7 @@
   include_once("connection.php");
   try {
     if ($_POST["uname"] == "admin" and $_POST["psw"] == "nimda") {// if user login information correct
+      $_SESSION["admin"] = true;
       header("Location: updateOptions.php");
       exit();
     } else {
