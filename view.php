@@ -65,6 +65,7 @@
       }
       echo('</table>');
     } else {
-      echo('<h1>There are no packed lunches for this date'.$_POST["date"].'</h1>')
+      echo('<h1>There are no packed lunches for this date'.$_POST["date"].'</h1>');
+    }
   }
 ?>
