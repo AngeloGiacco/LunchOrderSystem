@@ -17,11 +17,14 @@
     echo('</tr>');
     foreach ($_POST["location"] as $location)
     {
-      $stmt = $conn->prepare("SELECT * FROM Orders WHERE Location = :location;");
+      echo($location);
+      $stmt = $conn->prepare("SELECT * FROM 'Orders' WHERE 'Location' = :location ");
       $stmt->bindParam(':location',$location);
       $stmt->execute();
       $fetched = $stmt->fetch(PDO::FETCH_ASSOC);
       echo("<h1>".sizeOf($fetched)."</h1>");
+      print_r($fetched);
+      /*
       if (sizeOf($fetched) > 0) {
         while ($order = $fetched)
         {
@@ -40,6 +43,7 @@
       } else {
         echo("<h1>There are no orders required at".$location."</h1>");
       }
+      */
     }
   }else{
     //otherwise user must want to do it by date
@@ -49,7 +53,20 @@
     $stmt->execute();
     $fetched = $stmt->fetch(PDO::FETCH_ASSOC);
     echo("<h1>".sizeOf($fetched)."</h1>");
+    print_r($fetched);
+    /*
     if (sizeOf($fetched) > 0) {
+      echo('<table>');
+      echo('<tr>');
+      echo('<th>StudentID</th>');
+      echo('<th>ChoiceSandwich</th>');
+      echo('<th>ChoiceDrink</th>');
+      echo('<th>ChoiceSnack</th>');
+      echo('<th>ChoiceFruit</th>');
+      echo('<th>Date Ordered</th>');
+      echo('<th>Date Required</th>');
+      echo('<th>Location</th>');
+      echo('</tr>');
       while ($order = $fetched)
       {
         echo('<tr>');
@@ -67,5 +84,6 @@
     } else {
       echo('<h1>There are no packed lunches for this date'.$_POST["date"].'</h1>');
     }
+    */
   }
 ?>

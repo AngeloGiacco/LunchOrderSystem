@@ -32,11 +32,6 @@
     right:10px;
   }
 
-  .logout {
-    background-color: #053162;
-    width: 100%;
-    height: 60px;
-  }
   #view {
     position: absolute;
     top: 80px;
@@ -102,7 +97,7 @@
   .close {
     position: absolute;
     right: 35px;
-    top: 15px;
+    top: 55px;
     font-size: 40px;
     font-weight: bold;
     color: #f1f1f1;
@@ -132,11 +127,9 @@
 </style>
 </head>
 <body>
-  <div class = 'logout'>
-    <form method = "post" action = "logout.php">
-      <input type = "submit" name = "logout" value = "logout" id = "logout">
-    </form>
-  </div>
+  <form method = "post" action = "logout.php">
+    <input type = "submit" name = "logout" value = "logout" id = "logout">
+  </form>
   <div id="stock">
     <h1>Current options</h1>
     <table>

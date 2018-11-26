@@ -4,10 +4,8 @@
   include_once("connection.php");
   $stmt = $conn->prepare("SELECT * FROM food");
   $stmt->execute();
-  $count = 0;
   while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
   {
-    $count = $count + 1;
     if ($row["Name"] == $_POST["sandwich"]) {
       $sandwichID = $row["FoodID"];
     } elseif ($row["Name"] == $_POST["drink"]) {
