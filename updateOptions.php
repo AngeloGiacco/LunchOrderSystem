@@ -94,6 +94,14 @@
     display:None;
   }
 
+  #add {
+    display:None;
+  }
+
+  #health {
+    display: none;
+  }
+
   .close {
     position: absolute;
     right: 35px;
@@ -167,6 +175,46 @@
     ?>
     </table>
   </div>
+  <div id = "add-container">
+    <h1>Add options</h1>
+    <p style="color:grey"><em>Please fill in the fields and submit to add options to the website</em></p>
+    <div id="add" class="modal">
+      <span onclick="document.getElementById('add').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <form id = "addForm"class="modal-content" action="add_option.php" method = "post">
+        <div class = "container">
+          <h1>Add Option Form</h1>
+          <p>Please fill in the information for the food option that you would like to add</p>
+
+          <input type = "text" name = "Name" placeholder="Enter food here" required><br><br>
+          Stock: <input type = "number" name = "Stock" min = 0 required><br><br>
+          Price: <input type = "number" name = "Price" min = 0 required><br><br>
+          Health advice:<input type ="text" name = "advice" placeholder="Please enter the exact health advice, if there isn't any enter None"><br><br>
+          Food type:<input type = "radio" name = "FoodType" value = "0" checked>Sandwich
+          <input type = "radio" name = "FoodType" value = "1">Drink
+          <input type = "radio" name = "FoodType" value = "2">Snack
+          <input type = "radio" name = "FoodType" value = "3">Fruit
+          <div class="clearfix">
+            <button type="button" onclick="document.getElementById('add').style.display='none'" class="cancelbtn">Cancel</button>
+            <button type="submit" class="signupbtn">Add Option</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <button onclick="document.getElementById('add').style.display='block'" style="width:auto;">Add options</button>
+  </div>
+
+  <script>
+  // Get the modal
+  var modal = document.getElementById('add');
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+  }
+  </script>
+
   <div id = "view">
     <h1>View Orders</h1>
     <p style="color:grey"><em>Please select which field you would like to use to view the orders</em></p>
@@ -188,6 +236,7 @@
         </div>
       </form>
     </div>
+
     <script>
     // Get the modal
     var modal = document.getElementById('date');

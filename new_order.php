@@ -25,6 +25,22 @@
         break 1;
     }
   }
+  $stmt = $conn->prepare("SELECT * FROM Orders");
+  $stmt->execute();
+  while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
+  {
+    if ($row["StudentID"] == $studentID and $row["DateRequired"] == $_POST["required"])
+    {
+      ?><script>
+          if (window.confirm('You have already ordered a packed lunch for this day! Please order one for another day!')){
+            window.location.href='order.php';
+          } else {
+  					window.location.href='order.php';
+  				};
+          </script><?php
+      exit();
+    }
+  }
   $stmt = $conn->prepare("INSERT INTO Orders (StudentID, ChoiceSandwich, ChoiceDrink, ChoiceSnack,ChoiceFruit,DateOrdered,DateRequired,Location)Values (:studentID,:choicesa,:choiced, :choicesn, :choicef,:dateo, :dated, :location)");
   $stmt->bindParam(':studentID', $studentID);
   $stmt->bindParam(':choicesa', $sandwichID);

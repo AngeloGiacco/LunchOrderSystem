@@ -17,13 +17,14 @@
         header("Location: order.php");
         exit();
       } else {
-        if ($row["password"] = $_POST["psw"]) {
-          ?><script>
+        ?><script>
           if (window.confirm('Incorrect password, please press ok to try again')){
             window.location.href='index.php?login=false';
-          };
+          } else {
+  					window.location.href='index.php?login=false';
+  				};
           </script><?php
-        }
+          exit();
       }
     }
     $conn=null;

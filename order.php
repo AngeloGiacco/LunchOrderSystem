@@ -46,9 +46,9 @@
         $stmt->execute();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
         {
-          if ($row["Health Advice"] != "None") {
+          if ($row["HealthAdvice"] != "None") {
             echo("<option style='color:red'>".$row["Name"]."</option>");
-            echo("<script>alert('".$row['Name']." has the following health advice:".$row['Health Advice']."')</script>");
+            echo("<script>alert('".$row['Name']." has the following health advice:".$row['HealthAdvice']."')</script>");
           } else {
             echo("<option>".$row["Name"]."</option>");
           }
@@ -63,9 +63,9 @@
         $stmt->execute();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
         {
-          if ($row["Health Advice"] != "None") {
+          if ($row["HealthAdvice"] != "None") {
             echo("<option style='color:red'>".$row["Name"]."</option>");
-            echo("<script>alert('".$row['Name']." has the following health advice:".$row['Health Advice']."')</script>");
+            echo("<script>alert('".$row['Name']." has the following health advice:".$row['HealthAdvice']."')</script>");
           } else {
             echo("<option>".$row["Name"]."</option>");
           }
@@ -80,9 +80,9 @@
         $stmt->execute();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
         {
-          if ($row["Health Advice"] != "None") {
+          if ($row["HealthAdvice"] != "None") {
             echo("<option style='color:red'>".$row["Name"]."</option>");
-            echo("<script>alert('".$row['Name']." has the following health advice:".$row['Health Advice']."')</script>");
+            echo("<script>alert('".$row['Name']." has the following health advice:".$row['HealthAdvice']."')</script>");
           } else {
             echo("<option>".$row["Name"]."</option>");
           }
@@ -97,9 +97,9 @@
         $stmt->execute();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
         {
-          if ($row["Health Advice"] != "None") {
+          if ($row["HealthAdvice"] != "None") {
             echo("<option class='warning'>".$row["Name"]."</option>");
-            echo("<script>alert('".$row['Name']." has the following health advice:".$row['Health Advice']."')</script>");
+            echo("<script>alert('".$row['Name']." has the following health advice:".$row['HealthAdvice']."')</script>");
           } else {
             echo("<option>".$row["Name"]."</option>");
           }
