@@ -51,7 +51,21 @@
   $stmt->bindParam(':dated', $_POST["required"]);
   $stmt->bindParam(':location', $_POST["location"]);
   $stmt->execute();
-  $conn=null;
+  //reduce stock
+  $var = array($sandwichID, $drinkID, $snackID, $fruitID);
+  foreach ($var as $food) {
+    $stmt = $conn->prepare("SELECT Stock FROM food WHERE FoodID = :id");
+    $stmt->bindParam(":id", $food);
+    $stmt->execute();
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    $stock = $result["Stock"];
+    $newStock = $stock-1;
+    $stmt = $conn->prepare("UPDATE food SET Stock = :newStock WHERE food.FoodID = :id");
+    $stmt->bindParam(":newStock",$newStock);
+    $stmt->bindParam(":id", $food);
+    $stmt->execute();
+  }
+  $conn = null;
   header('Location: order.php');
   exit();
 ?>
