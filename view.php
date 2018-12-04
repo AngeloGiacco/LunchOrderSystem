@@ -34,12 +34,17 @@
           echo('</tr>');
         }
     }
-  }else{
-    //otherwise user must want to do it by date
-    //display date
-    $stmt = $conn->prepare("SELECT * FROM Orders WHERE DateRequired = :datereq;");
-    $stmt->bindParam(':datereq',$_POST["date"]);
-    $stmt->execute();
+  }else {
+    if (isset($_POST["date"])) {
+      //otherwise user must want to do it by date
+      //display date
+      $stmt = $conn->prepare("SELECT * FROM Orders WHERE DateRequired = :datereq;");
+      $stmt->bindParam(':datereq',$_POST["date"]);
+      $stmt->execute();
+    } else {
+      $stmt = $conn->prepare("SELECT * FROM Orders");
+      $stmt->execute();
+    }
     echo('<table>');
     echo('<tr>');
     echo('<th>StudentID</th>');

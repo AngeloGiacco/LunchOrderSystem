@@ -1,18 +1,25 @@
 <?php
   session_start();
+  if (!isset($_SESSION["email"])) {
+    header('Location: index.php?login=false');
+  }
   array_map("htmlspecialchars", $_POST);
   include_once("connection.php");
+  $sandwich = $_POST["sandwich"];
+  $drink = $_POST["drink"];
+  $snack = $_POST["snack"];
+  $fruit = $_POST["fruit"];
   $stmt = $conn->prepare("SELECT * FROM food");
   $stmt->execute();
   while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
   {
-    if ($row["Name"] == $_POST["sandwich"]) {
+    if ($row["Name"] == $sandwich) {
       $sandwichID = $row["FoodID"];
-    } elseif ($row["Name"] == $_POST["drink"]) {
+    } elseif ($row["Name"] == $drink) {
       $drinkID = $row["FoodID"];
-    } elseif ($row["Name"] == $_POST["snack"]) {
+    } elseif ($row["Name"] == $snack) {
       $snackID = $row["FoodID"];
-    } elseif ($row["Name"] == $_POST["fruit"]) {
+    } elseif ($row["Name"] == $fruit) {
       $fruitID = $row["FoodID"];
     }
   }
@@ -51,6 +58,7 @@
   $stmt->bindParam(':dated', $_POST["required"]);
   $stmt->bindParam(':location', $_POST["location"]);
   $stmt->execute();
+
   //reduce stock
   $var = array($sandwichID, $drinkID, $snackID, $fruitID);
   foreach ($var as $food) {
@@ -65,7 +73,11 @@
     $stmt->bindParam(":id", $food);
     $stmt->execute();
   }
-  $conn = null;
+  $datereq = $_POST['required'];
+  $url = "www.packedlunch.dx.am/delete_order.php?StudentID=$studentID&datereq=$datereq";
+  $email = $_SESSION['email'];
+  mail($email, "Packed lunch order", "You have just made the following order at pakedlunch.dx.am: sandwich = $sandwich, drink = $drink, snack = $snack and fruit = $fruit. If this is not correct or someone else placed the order, please cancel the order by visiting this link: $url", "From: packedlunch@packedlunch.dx.am\r\n");
+  $conn=null;
   header('Location: order.php');
   exit();
 ?>

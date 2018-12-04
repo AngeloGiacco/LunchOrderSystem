@@ -8,123 +8,8 @@
 <html>
 <head>
 <title>Subjects</title>
+<link rel = "stylesheet" type = "text/css" href = "stylesheet.css" />
 <style>
-  body {
-    font-family: Lato, Helvetica, sans-serif;
-    background: url(oundle.jpg) no-repeat center center fixed;
-    background-repeat: no-repeat;
-    background-size: 800px 800px;
-    height:100%;
-  }
-
-  table {
-    position: relative;
-  }
-
-  #logout {
-    position: absolute;
-    background: #053162;
-    padding: 15px;
-    color: #fff;
-    font-size: 20px;
-    border-radius: 4px;
-    top: 10px;
-    right:10px;
-  }
-
-  #view {
-    position: absolute;
-    top: 80px;
-    right: 20px;
-    float: right;
-  }
-  /* Full-width input fields */
-  input[type=text], input[type=password] {
-      width: 100%;
-      padding: 12px 20px;
-      margin: 8px 0;
-      display: inline-block;
-      border: 1px solid #ccc;
-      box-sizing: border-box;
-  }
-
-  /* Set a style for all buttons */
-  button {
-      background-color: #053162;
-      color: white;
-      padding: 14px 20px;
-      margin: 8px 0;
-      border: none;
-      cursor: pointer;
-      width: 100%;
-  }
-
-  button:hover {
-      opacity: 0.8;
-  }
-
-  .container {
-      padding: 16px;
-  }
-
-  span.psw {
-      float: right;
-      padding-top: 16px;
-  }
-
-  /* The Modal (background) */
-  .modal {
-      position: fixed; /* Stay in place */
-      z-index: 1; /* Sit on top */
-      left: 0;
-      top: 0;
-      width: 100%; /* Full width */
-      height: 100%; /* Full height */
-      overflow: auto; /* Enable scroll if needed */
-      background-color: rgb(0,0,0); /* Fallback color */
-      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-      padding-top: 60px;
-  }
-
-  #location {
-    display:None;
-  }
-
-  #date {
-    display:None;
-  }
-
-  #add {
-    display:None;
-  }
-
-  #health {
-    display: none;
-  }
-
-  .close {
-    position: absolute;
-    right: 35px;
-    top: 55px;
-    font-size: 40px;
-    font-weight: bold;
-    color: #f1f1f1;
-  }
-
-  .close:hover,
-  .close:focus {
-    color: #053162;
-    cursor: pointer;
-  }
-
-  /* Modal Content/Box */
-  .modal-content {
-      background-color: #fefefe;
-      margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-      border: 1px solid #888;
-      width: 80%; /* Could be more or less, depending on screen size */
-  }
-
   /* Change styles for span and cancel button on extra small screens */
   @media screen and (max-width: 300px) {
       span.psw {
@@ -218,6 +103,7 @@
   <div id = "view">
     <h1>View Orders</h1>
     <p style="color:grey"><em>Please select which field you would like to use to view the orders</em></p>
+
     <div id="date" class="modal">
       <span onclick="document.getElementById('date').style.display='none'" class="close" title="Close Modal">&times;</span>
       <form class="modal-content" action="view.php" method = "post">
@@ -292,6 +178,7 @@
         }
     }
     </script>
+    <form action = "view.php" method = "post"><button type = "submit" value = "all" name = "all" style="width:auto;">View all</button></form>
     <button onclick="document.getElementById('date').style.display='block'" style="width:auto;">View by date</button>
     <button onclick="document.getElementById('location').style.display='block'" style="width:auto;">View by delivery location</button>
   </div>

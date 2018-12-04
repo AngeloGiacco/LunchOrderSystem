@@ -1,0 +1,171 @@
+.top {
+  width: 100%;
+  position: fixed;
+  height: 70px;
+}
+
+.form {
+  position: relative;
+  top:40px;
+}
+
+.warning {
+  color: #fff;
+  background-color: red;
+}
+
+#logout, #changeButton {
+    left:10px;
+    background-color: #053162;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    bottom: 10px;
+}
+
+#logout:hover {
+    opacity: 0.8;
+}
+select {
+  position: relative;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: url(oundle.jpg) no-repeat center center fixed;
+  background-repeat: no-repeat;
+  background-size: 800px 800px;
+}
+
+.order {
+  display: inline-block;
+  font-family: ProductSans;
+  background-color: #053161;
+  width: 100%;
+  padding: 12px 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+    left:10px;
+    background-color: #053162;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.container {
+    padding: 16px;
+}
+
+.psw{
+  bottom: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+#change {
+  display:None;
+}
+
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+  color: #053162;
+  cursor: pointer;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+#id02 {
+  display: none;
+}
+
+#date {
+  display: none;
+}
+
+#add {
+  display: none;
+}
+
+#location {
+  display: none;
+}
+
+#view {
+  position: relative;
+  float: right;
+}
+
+.orderform {
+  font-family: ProductSans;
+  background-color: #053161;
+  width: 100%;
+  padding: 12px 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}

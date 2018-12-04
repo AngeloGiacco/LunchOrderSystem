@@ -1,3 +1,34 @@
+<?php
+  if (isset($_POST["email"])) {
+    include_once("connection.php");
+    $email = $_POST["email"];
+    $stmt = $conn->prepare('SELECT StudentID FROM pupils WHERE email = :email');
+    $stmt->bindParam(':email',$email);
+    $stmt->execute();
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    print_r($result);
+    if (isset($result["StudentID"])) {
+      $str = "0123456789qwertzuiopasdfghjklyxcvbnm";
+      $str = str_shuffle($str);
+      $str = substr($str, 0, 10);
+      $url = "packedlunch.dx.am/resetPassword.php?token=$str&email=$email";
+      mail($email, "Reset Password", "To reset your password please visit this: $url", "From: packedlunch@packedlunch.dx.am\r\n");
+      $stmt = $conn->prepare('UPDATE pupils SET token = :str WHERE email = :email');
+      $stmt->bindParam(':email',$email);
+      $stmt->bindParam(':str',$str);
+      $stmt->execute();
+    } else {
+      ?><script>
+      if (window.confirm('Unfortunately there is not an account associated with this email. Please try again with another one by pressing ok or contact the system administrator.')){
+        window.location.href='forgot_password.php';
+      } else {
+        window.location.href='forgot_password.php';
+      };
+      </script><?php
+    }
+  }
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -201,7 +232,7 @@ label {
            </ul>
            <ul class="panel-heading">
               <li class="panel-title">
-                 <a class="subMenu1" href="index.html"><span>Login</span></a>
+                 <a class="subMenu1" href="index.php"><span>Login</span></a>
               </li>
            </ul>
         </div>
@@ -212,13 +243,13 @@ label {
   <div class="col-sm-9 col-md-9 col-lg-10 content equal-height">
     <div class="content-area-right">
      <div class="content-crumb-div">
-        <a href="https://portal.oundleschool.org.uk/login/login.aspx?prelogin=https%3a%2f%2fportal.oundleschool.org.uk%2f.html">Intranet</a>/ <a href = "index.html"> Retry Login</a>/ Forgot Password
+        <a href="https://portal.oundleschool.org.uk/login/login.aspx?prelogin=https%3a%2f%2fportal.oundleschool.org.uk%2f.html">Intranet</a>/ <a href = "index.php"> Retry Login</a>/ Forgot Password
      </div>
         <div class="row">
            <div class="col-md-5 forgot-form">
               <p>Please enter your email address below and we will send you information to change your password.</p>
-              <form action = "forgotPassword.php" method = "post"><label class="label-default" for="un">Email Address</label><input id="email_addy" name="email" class="form-control" type="text"><br></form>
-              <a id="mybad" class="btn btn-primary" role="button">RESET</a>
+              <form action = "forgot_password.php" method = "post"><label class="label-default" for="un">Email Address</label><input id="email_addy" name="email" class="form-control" type="text"><br>
+              <input type = "submit" value="Request password"></form>
            </div>
            <div class="col-md-5 forgot-return" style="display:none;">
               <h3>Reset Password Sent</h3>
