@@ -12,10 +12,21 @@
       $attempt = $_POST["psw"];
       $hashed = $result["password"];
       if (password_verify($attempt,$hashed)){
-        $stmt = $conn->prepare("UPDATE pupils SET password = :new_password WHERE email = :email");
-        $stmt->bindParam(":email",$email);
-        $stmt->bindParam(":new_password",password_hash($_POST["new-psw"],PASSWORD_BCRYPT));
-        $stmt->execute();
+        $attempt = $_POST["new-psw"];
+        if (password_verify($attempt,$hashed)){
+          ?><script>
+            if (window.confirm('Password the same. Please retry')){
+              window.location.href='order.php';
+            } else {
+    					window.location.href='order.php';
+    				};
+          </script><?php
+        } else {
+          $stmt = $conn->prepare("UPDATE pupils SET password = :new_password WHERE email = :email");
+          $stmt->bindParam(":email",$email);
+          $stmt->bindParam(":new_password",password_hash($_POST["new-psw"],PASSWORD_BCRYPT));
+          $stmt->execute();
+        }
       } else {
         ?><script>
           if (window.confirm('Incorrect password. Please retry')){

@@ -79,11 +79,13 @@ body{
     bottom: -20%;
     opacity: 0;
     font-size: 13px;
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .screen button:focus{
     outline:0;
+
+  : pointer;
 }
 #Bubbles{
     visibility: hidden;

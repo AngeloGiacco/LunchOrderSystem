@@ -18,7 +18,7 @@ if ((isset($_POST["email"]))&&(isset($_POST["surname"]))&&(isset($_POST["forenam
     $url = "www.packedlunch.dx.am/add_user.php?token=$str&surname=$surname&forename=$forname&house=$house&email=$email";
     mail($email, "Verify sign up to packedlunch.dx.am", "To confirm your account please visit: $url", "From: packedlunch@packedlunch.dx.am\r\n");
     $stmt = $conn->prepare("INSERT INTO pupils (StudentID,Surname,Forename,House,email,password,token) VALUES (null,' ',' ',' ',' ',:password,:token)");
-    $stmt->bindParam(':password',password_hash($_POST["psw"]),PASSWORD_BCRYPT);
+    $stmt->bindParam(':password',password_hash($_POST["psw"],PASSWORD_BCRYPT));
     $stmt->bindParam(':token',$str);
     $stmt->execute();
   } else {
