@@ -151,8 +151,9 @@ span.psw {
 }
 
 #view {
-  position: relative;
-  float: right;
+  position: absolute;
+  right: 10;
+  top: 10;
 }
 
 .orderform {

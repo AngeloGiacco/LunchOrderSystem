@@ -17,6 +17,10 @@
          float: none;
       }
   }
+
+  table {
+    font-weight: bold;
+  }
 </style>
 </head>
 <body>
