@@ -12,8 +12,6 @@
       $stmt->bindParam(':email',$_POST["uname"]);
       $stmt->execute();
       $row = $stmt->fetch(PDO::FETCH_ASSOC);
-      echo("<h1>".$_POST["psw"]."</h1>");
-      echo("<h1>".$row["password"]."</h1>")
       $attempt = $_POST["psw"];
       $hashed = $row["password"];
       if (password_verify($attempt,$hashed)){
