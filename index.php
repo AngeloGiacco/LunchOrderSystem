@@ -4,6 +4,8 @@
 <!DOCTYPE html>
 <head>
     <title>Lunch order system</title>
+    <link rel = "stylesheet" type = "text/css" href = "stylesheet.css" />
+    <style>
     <style>
     body {
       font-family: Arial, Helvetica, sans-serif;
@@ -120,6 +122,7 @@
 
       <div class="container" style="background-color:#fefefe">
         <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign Up</button>
+        <span class="psw" style="color:ffffff">Forgot <a href="forgot_password.php">password?</a></span>
         <span class="psw" style="color:ffffff">Forgot <a href="forgot_password.html">password?</a></span>
       </div>
     </form>
@@ -127,7 +130,7 @@
 
   <div id="id02" class="modal">
     <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-    <form class="modal-content" action="add_user.php" method = "post">
+    <form class="modal-content" action="signUpVerification.php" method = "post">
       <div class="container">
         <h1>Sign Up</h1>
         <p>Please fill in this form to create an account.</p>
