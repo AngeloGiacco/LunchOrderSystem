@@ -1,7 +1,7 @@
 <?php
 $servername = "fdb22.awardspace.net"; //removed http://
 $username="2829205_pupils";
-$password = "7eDrHxZsZVSExFn";
+$password = "not the real password";
 $dbname = "2829205_pupils";
 
 try {

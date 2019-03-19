@@ -49,6 +49,9 @@
     }
   }
   $stmt = $conn->prepare("INSERT INTO Orders (StudentID, ChoiceSandwich, ChoiceDrink, ChoiceSnack,ChoiceFruit,DateOrdered,DateRequired,Location)Values (:studentID,:choicesa,:choiced, :choicesn, :choicef,:dateo, :dated, :location)");
+  echo "<h1>".$studentID."</h1>";
+  /*
+  $stmt = $conn->prepare("INSERT INTO Orders (StudentID, ChoiceSandwich, ChoiceDrink, ChoiceSnack,ChoiceFruit,DateOrdered,DateRequired,Location) Values (:studentID,:choicesa,:choiced, :choicesn, :choicef,:dateo, :dated, :location)");
   $stmt->bindParam(':studentID', $studentID);
   $stmt->bindParam(':choicesa', $sandwichID);
   $stmt->bindParam(':choiced', $drinkID);
@@ -58,7 +61,6 @@
   $stmt->bindParam(':dated', $_POST["required"]);
   $stmt->bindParam(':location', $_POST["location"]);
   $stmt->execute();
-
   //reduce stock
   $var = array($sandwichID, $drinkID, $snackID, $fruitID);
   foreach ($var as $food) {
@@ -80,4 +82,6 @@
   $conn=null;
   header('Location: order.php');
   exit();
+  $conn=null;
+  */
 ?>
